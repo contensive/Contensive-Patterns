@@ -5,8 +5,7 @@
 [Detailed explanation, history, why this pattern exists]
 A Page Widget is an addon that can be drag-and-dropped on a web page of a Contensive Website using the Contensive Widget Tool.
 
-
-
+This pattern is also referred to as a Design Block.
 
 ## Architecture
 [In-depth architecture discussion]
