@@ -4,7 +4,16 @@
 
 ## Overview
 [Detailed explanation, history, why this pattern exists]
-An Addon is a pattern that creates an executable function on a Contensive website. Addons are combined into Addon Collections and installed on a site.
+The Contensive platform creates an extensabilty framework for managing and executing addons in several context, including websites, web applications, command line, and background tasks (windows services)
+
+## Contnsive Collections
+A collection is a group of features that are installed and maintained together. For example Ecommerce is a collection that includes account management features, reports, and an online catalog.
+
+## Contensive Features
+A Feature is a single funtionality. For example a SiteMap is a feature that can be dropped on a page and might be composed of multiple addons. Many features might be installed and maintained together in one collection. For example to create a sitemap that can be drag-and-dropped on a Contensive website, you would first create a Page-Widget addon that renders the html with javascript and styles for the page, and would also process any form submissions. But it might use a second addon that is a Remote-Method addon which responds to an endpoint and would return the list of pages from the server used in the map.
+
+## Contensive Addons
+An Addon is a pattern that creates an executable function on a Contensive website. 
 
 There are several contexts in which an addon can be executed
 1) Background Tasks -- An addon can be executed on a schedules bases in a background process
@@ -62,6 +71,20 @@ An Addon Collection can specify one the addons as the OnInstall addon, which the
 A content definition is metadata for a database table and its fields. This metadata is used to create the database table during installation and is used to create the Contensive Control Panel edit screen and data list pages for the data.
 
 The content definition "content" defines all the content definitions in the application
+
+## Development Folder Structure
+
+One Addon Collection contains the installable features from one DotNet project. A solution might contain multiple projects, each of which would have its own addon collection zip file.
+
+Each solution and its project and collections are stored in one Git repository.
+
+This is the typical development folder structure
+
+- Collections -- contains a folder for each addon collection, named the same as the collection
+- Scripts -- contains automation scripts
+- Server -- contains the dotnet solution, with a subfolder for each dotnet project in the solution
+- UI -- contains the html layouts and html page templates installed with the collections in this repo
+- HelpFiles - contains the markdown help documents installed with this collection
 
 
 ## Full Examples

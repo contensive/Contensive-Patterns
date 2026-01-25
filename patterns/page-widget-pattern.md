@@ -41,10 +41,15 @@ A page widget has several components
 - widgetName is the name that appears on the widget editor
 - layoutGuid is used to lookup the layout needed. If it is missing, the layoutpathfilename file is read and a layout recore is created with the LayoutGuid, LayoutName, and LayoutpathFilename
 
-# The Addon Collection
-- 
+## Steps to Scaffold a new Page Widget Addon
 
-
-
-## Full Examples
-[Multiple complete examples with explanations]
+1) follow the pattern established in the example PageWidgetExample solution
+2) Determine the Addon Collection in which this addon will be created. If one does not exists, first scaffold  a new Addon Collection repository with collection and new dotnet solution.
+3) Determine The project in the dotnet solution. 
+4) In the Addon Collection create a new addon node
+    - Create a new Addon node
+    - add a name that will be recognized by users when they add it to a page
+    - ceate a new guid for the addon
+    - create a dotnetclass node and use the dotnet projects namespace to the Addons folder
+    - mark the node Content true to allow this addon to be dropped into content
+5) In the dotnet project, the Addons folder create a new class that inherits CPBaseClass. 
